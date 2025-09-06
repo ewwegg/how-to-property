@@ -21,8 +21,8 @@ Start with 2-3 foundational agents that can both create patterns and generate fr
 
 - Search for existing patterns
 - Create new patterns when needed (under constraints)
-- Generate code exclusively from patterns
-- Never produce free-form code
+- Generate code guided from patterns
+- Never produce free-form code which isn't grounded in an existing pattern.
 
 **Philosophy Constraint System**
 Implement active philosophy enforcement during pattern creation:
@@ -171,7 +171,6 @@ Determine when human validation is necessary:
 
 ### Success Indicators
 
-- Pattern creation time decreases by 50%
 - Pattern reuse exceeds 80%
 - Generated improvements are kept 90% of the time
 - New patterns are rarely needed
@@ -213,28 +212,11 @@ Build infrastructure for sharing and discovering patterns:
 - Usage statistics and reviews
 - Version management for external patterns
 
-**Philosophy Federation**
-Enable different philosophy variants while maintaining core principles:
-
-- Core philosophy that all patterns must follow
-- Extension philosophies for specific domains
-- Philosophy compatibility checking
-- Clear philosophy inheritance rules
-
-**Advanced Agent Specialization**
-Develop domain-specific agents that maintain pattern-first discipline:
-
-- Framework-specific agents (React, Vue, Django)
-- Industry-specific agents (fintech, healthcare)
-- Scale-specific agents (startup, enterprise)
-- All creating patterns under constraints
-
 ### Success Indicators
 
 - Community patterns exceed internal patterns
 - High-quality patterns emerge without central control
 - Different teams can share patterns effectively
-- Philosophy variants serve specific needs without chaos
 - Pattern-first discipline maintained across ecosystem
 
 ### Considerations for Future

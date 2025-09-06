@@ -1,0 +1,5 @@
+2025-09-06T13:22:02.000599 - Error processing task 'setup nextjs project': Pattern validation failed: ['Pattern contains incomplete sections']
+2025-09-06T13:22:24.329986 - Error processing task 'setup nextjs project': Pattern validation failed: ['Pattern contains incomplete sections']
+2025-09-06T13:38:41.685212 - Error processing task 'create navigation bar': Frontend UI agent cannot create patterns inline for: create navigation bar
+Patterns must be created separately and added to .ai/patterns/frontend/
+Use: python3 .ai/orchestrator.py create '{task}' to create a pattern manually

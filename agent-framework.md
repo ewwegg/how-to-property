@@ -15,10 +15,10 @@ AI language models waste computational resources and produce inconsistent result
 When generating code, AI models typically:
 
 - Load entire codebases to find 500 relevant tokens among 50,000
-- Produce incomplete solutions filled with TODOs and placeholders
+- Produce incomplete solutions that don't leverage existing parts of the codebase
 - Generate over-engineered solutions for simple tasks
 - Create inconsistent implementations for similar problems
-- Output code that works but violates architectural principles
+- Output code that works but violates architectural principles, leading to technical debt and significant maintenance overhead
 
 This framework ensures AI generates complete, consistent, principled code by only allowing generation from philosophy-validated patterns.
 
@@ -29,9 +29,9 @@ This framework ensures AI generates complete, consistent, principled code by onl
 The framework's fundamental rule: **Code can only be generated from patterns**. When no suitable pattern exists, agents create new patterns under philosophical constraints before any code generation. This ensures:
 
 - Every line of generated code follows established principles
-- Bad code literally cannot be generated
 - Consistency is guaranteed, not hoped for
 - Philosophy is active at creation time, not applied retroactively
+- Bad code is highly-unlikely
 
 ### Domain Agents
 
@@ -48,7 +48,7 @@ Each agent can:
 
 1. Search for relevant patterns
 2. Create new patterns when needed (under philosophical constraints)
-3. Generate code exclusively from patterns
+3. Generate code guided by patterns
 4. Validate pattern completeness
 
 ### Context Library
@@ -83,11 +83,11 @@ A lightweight coordinator that:
 
 ### Pattern-First, Always
 
-No free-form code generation ever occurs. The workflow is always:
+No free-form code generation occurs. The workflow is:
 
 1. Identify task need
 2. Search for existing pattern
-3. If no pattern: create pattern under constraints
+3. If no pattern: create pattern under philosophical constraints
 4. Generate code from pattern
 5. Deliver complete, principled solution
 
@@ -115,11 +115,11 @@ Since code can only come from patterns, and patterns can only be created under p
 
 ### Intentional Development
 
-Creating a pattern before generating code forces deliberate design decisions. This intentionality prevents the "generate and hope" approach that leads to technical debt.
+Creating a pattern before generating code forces deliberate design decisions. This intentionality prevents the "generate and hope" (predominantly found in vibe coding) approach that leads to technical debt.
 
 ### Learning Through Pattern Creation
 
-When agents create new patterns, they learn the right way to solve problems. This learning is captured in the pattern library, making the framework smarter over time while maintaining principles.
+When agents generate new code, they still have the flexiility to solve new problems, and when they learn the right way to solve problems, they create new patterns or update existing ones to relfect it. This learning is captured in the pattern library, making the framework smarter over time while maintaining principles.
 
 ### Natural Consistency
 
@@ -153,14 +153,14 @@ The framework succeeds when:
 
 - Generated code never violates architectural principles
 - New patterns are created faster than free-form generation would take
-- Pattern reuse exceeds 80% after initial library build
+- Pattern reuse exceeds pattern generation (after initial library build)
 - Developers trust the output without review
 - The pattern library becomes the team's knowledge base
 - Bad code is impossible, not just discouraged
 
 ## The Pattern-First Guarantee
 
-By enforcing pattern-first generation, the framework provides a guarantee that traditional AI code generation cannot: **every single line of generated code follows your principles, architecture, and best practices**. This isn't achieved through hoping the AI "understands" your requirements - it's achieved through making principled patterns the only source of code generation.
+By enforcing pattern-first generation, the framework provides a guarantee that traditional AI code generation cannot: **every single line of generated code follows your principles, architecture, and best practices**. This isn't achieved through hoping the AI "understands" your requirements - it's achieved through making principled patterns the source of code generation.
 
 ---
 

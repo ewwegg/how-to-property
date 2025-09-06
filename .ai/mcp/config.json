@@ -1,0 +1,36 @@
+{
+  "name": "pattern-framework",
+  "version": "1.0.0",
+  "description": "MCP server for pattern-first code generation framework",
+  "capabilities": {
+    "resources": true,
+    "tools": true,
+    "prompts": false
+  },
+  "tools": [
+    {
+      "name": "generate_from_pattern",
+      "description": "Generate code using existing patterns"
+    },
+    {
+      "name": "search_patterns",
+      "description": "Search for existing patterns"
+    },
+    {
+      "name": "list_all_patterns",
+      "description": "List all available patterns"
+    },
+    {
+      "name": "validate_code",
+      "description": "Validate code against framework philosophy"
+    },
+    {
+      "name": "get_pattern_instructions",
+      "description": "Get instructions for creating a new pattern"
+    }
+  ],
+  "resources": {
+    "philosophy": "Framework philosophy and principles",
+    "patterns": "All available code patterns"
+  }
+}

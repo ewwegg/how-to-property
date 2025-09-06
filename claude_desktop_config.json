@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "pattern-framework": {
+      "command": "/home/ewwegg/projects/how-to-property/.ai/mcp/run.sh",
+      "env": {
+        "PYTHONPATH": "/home/ewwegg/projects/how-to-property"
+      }
+    }
+  }
+}

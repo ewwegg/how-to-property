@@ -10,6 +10,113 @@ do i need 175+ agents? or do i need an agent for "authentication" and then it se
 
 =======
 
+## single file agents
+
+Single file agents are exceptionally compatible with your AI-First Framework philosophy. They embody the same principles: complete solutions, minimal complexity, and focused scope.
+
+## Key Benefits for Your Framework
+
+1. Tasks Become Executable, Not Just Documented
+   Instead of markdown files describing how to implement something, each task IS an implementation:
+   python
+   Instead of: knowledge/tasks/create-form.md
+   You have: agents/create_form_agent.py
+2. Philosophy Enforcement Through Agent Selection
+   Your philosophy engine doesn't just filter patterns - it selects which agents to invoke based on simplicity and completeness.
+3. Perfect Alignment with "Complete but Minimal"
+   Each agent is a complete, working solution in a single file - the ultimate expression of your minimal viable philosophy.
+
+your-project/
+├── .ai/
+│ ├── philosophy/
+│ │ └── core.yaml
+│ │
+│ ├── agents/ # Single file agents
+│ │ ├── api/
+│ │ │ ├── create_endpoint.py
+│ │ │ ├── add_validation.py
+│ │ │ └── handle_errors.py
+│ │ ├── frontend/
+│ │ │ ├── create_form.py
+│ │ │ ├── add_table.py
+│ │ │ └── setup_routing.py
+│ │ └── database/
+│ │ ├── add_migration.py
+│ │ └── create_index.py
+│ │
+│ ├── orchestrator/ # Enhanced context engine
+│ │ ├── agent_selector.py # Chooses which agents
+│ │ ├── context_engine.py # Assembles agent + context
+│ │ └── philosophy.py # Evaluates agent fitness
+│ │
+│ └── knowledge/ # Lightweight metadata
+│ └── agent_registry.yaml # Maps tasks to agents
+
+**improvement** I think it would be best to have an "API agent", "frontend agent", "database agent", and have the more specific tasks as markdown so they can be more descriptive, for example the api agent would decide which files are relevant to the task it's been given and ecide which files to read from 'create_endpoint.py', 'add_validation.py', 'handle_errors.py'.
+
+How can i keep the agent flexible, but provide context for project consistency. I don't want to provide complete code solutions
+
+I would prefer a simple vector search rather than a registry, or some kind of hybrid if it makes sense.
+
+Single file agents creates code that documents itself.
+
+Workflow
+
+1. Intent Analysis & Philosophy Check
+2. Agent Discovery & Selection with Generation Fallback
+3. Agent Task selection & Execution Planning (is it task selection, or is there a better name for it grabbing relevant documents like paterns)
+4. Dependency Resolution
+5. Execution
+6. Review
+7. Output and decision summary
+
+## Why UV is Critical for Single File Agents
+
+True Single File: With UV, each agent is genuinely self-contained with its dependencies declared in the file
+Instant Execution: No pip install wait times - UV caches everything
+Parallel Execution: Multiple agents can run simultaneously without conflicts
+Version Isolation: Each agent can use different package versions
+Zero Configuration: No virtual environment setup or activation
+
+The framework should leverage UV for:
+
+Agent execution: Each agent runs in its own UV-managed environment
+Dependency management: Agents declare their exact needs
+Testing: Run agent tests instantly without setup
+Development: Fast iteration with immediate dependency availability
+
+With UV, the philosophy becomes even stronger:
+Truly minimal: No global dependencies, each agent has only what it needs
+Actually isolated: Agents can't interfere with each other
+Instantly executable: Zero setup time from code to execution
+
+## The GOAL
+
+Core Insight: AI loads too much context. Solution: Dynamic context assembly - give AI only what's needed for the specific task.
+Philosophy as Filter: a function that removes complexity before the AI even sees options.
+Minimal Viable Completeness: The smallest solution that fully solves the problem.
+Single File Agents: Tasks become executable, not documented.
+
+## additional needs
+
+Claude Code CLI Integration: Full slash command support with configuration examples
+yamlslash_commands:
+
+- name: "agent"
+  command: ".ai/run"
+
+Philosophy Document: Clear markdown file (.ai/PHILOSOPHY.md) explaining why this exists and how it works - provides essential context without being configuration
+Autonomous Orchestration: The orchestrator understands patterns and dependencies
+
+Users type /build auth system
+System knows to run: setup-auth → create-user-model → create-login → add-middleware
+No manual ordering required
+
+Outcome Evaluation: Focus on completeness, simplicity, and maintainability
+
+Each agent self-validates its output
+Orchestrator evaluates for completeness
+
 # Task Oriented
 
 ## This is what AI agents actually do:
